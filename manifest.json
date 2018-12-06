@@ -1,0 +1,14 @@
+{
+  "author": "jeefo",
+  "name": "Youtube live highlight creator",
+  "version": "1.0",
+  "description": "Hacking Youtube live highlight.",
+  "manifest_version": 2,
+  "content_scripts": [
+   {
+     "matches": ["https://www.youtube.com/*"],
+     "js": ["ajax_hijack.js"]
+   }
+ ],
+ "homepage_url": "https://github.com/je3f0o/youtube_highlight_creator"
+}
