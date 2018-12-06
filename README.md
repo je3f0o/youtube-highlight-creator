@@ -1,7 +1,7 @@
 
 # Youtube highlight creator
 
-This is Google Chrome extension for create youtube highligh video from live 
+This is a Google Chrome extension for create youtube highlight video from live 
 stream.
 
 ## Motivation
