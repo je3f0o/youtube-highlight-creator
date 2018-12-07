@@ -1,7 +1,7 @@
 /* -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 * File Name   : ajax_hijack.js
 * Created at  : 2018-12-06
-* Updated at  : 2018-12-06
+* Updated at  : 2018-12-07
 * Author      : jeefo
 * Purpose     : Creating youtube highlight video from live stream.
 * Description :
@@ -15,17 +15,18 @@ var ajax_hijacker = function () {
 
 	var highlight = {
 		hours    : 4,
-		minutes  : 18,
-		seconds  : 53,
+		minutes  : 19,
+		seconds  : 0,
 		duration : 6, // seconds
 
 		calculate_chunk_numbers : function () {
 		  var starts_at_by_seconds = (this.hours * 3600) + (this.minutes * 60) + this.seconds;
 
-		  this.start_chunk_number = starts_at_by_seconds / SECONDS_PER_CHUNK;
-		  this.end_chunk_number   = this.start_chunk_number + (this.duration / SECONDS_PER_CHUNK);
+		  this.start_chunk_number = Math.floor(starts_at_by_seconds / SECONDS_PER_CHUNK);
+		  this.end_chunk_number   = this.start_chunk_number + Math.floor(this.duration / SECONDS_PER_CHUNK);
 		}
 	};
+	window.highlight = highlight;
 
 	XMLHttpRequest.prototype.open = function (http_method, url) {
 		this._url    = url;
